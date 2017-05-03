@@ -11,7 +11,6 @@
 		BE791E7A1EB781CC00EC0539 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE791E791EB781CC00EC0539 /* AppDelegate.swift */; };
 		BE791E811EB781CC00EC0539 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE791E801EB781CC00EC0539 /* Assets.xcassets */; };
 		BE791E841EB781CC00EC0539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE791E821EB781CC00EC0539 /* LaunchScreen.storyboard */; };
-		BE791E8C1EB782D400EC0539 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE791E8B1EB782D400EC0539 /* HomeController.swift */; };
 		BEA14C1E1EB902C300D50219 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C1D1EB902C300D50219 /* HomeDataSourceController.swift */; };
 		BEA14C231EB9097A00D50219 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C221EB9097A00D50219 /* Cells.swift */; };
 		BEA14C251EB9099900D50219 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C241EB9099900D50219 /* HomeDatasource.swift */; };
@@ -26,7 +25,6 @@
 		BE791E801EB781CC00EC0539 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE791E831EB781CC00EC0539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE791E851EB781CC00EC0539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE791E8B1EB782D400EC0539 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BEA14C1D1EB902C300D50219 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		BEA14C221EB9097A00D50219 /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		BEA14C241EB9099900D50219 /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				BE791E801EB781CC00EC0539 /* Assets.xcassets */,
 				BE791E821EB781CC00EC0539 /* LaunchScreen.storyboard */,
 				BE791E851EB781CC00EC0539 /* Info.plist */,
-				BE791E8B1EB782D400EC0539 /* HomeController.swift */,
 			);
 			path = "Twitter-Clone";
 			sourceTree = "<group>";
@@ -245,7 +242,6 @@
 				BEA14C1E1EB902C300D50219 /* HomeDataSourceController.swift in Sources */,
 				BEA14C231EB9097A00D50219 /* Cells.swift in Sources */,
 				BE791E7A1EB781CC00EC0539 /* AppDelegate.swift in Sources */,
-				BE791E8C1EB782D400EC0539 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
