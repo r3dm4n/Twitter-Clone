@@ -1,55 +1,23 @@
 //
-//  Cells.swift
+//  UserCell.swift
 //  Twitter-Clone
 //
-//  Created by r3d on 02/05/2017.
+//  Created by r3d on 03/05/2017.
 //  Copyright © 2017 r3d. All rights reserved.
 //
 
 import LBTAComponents
 
-let twitterBlue = UIColor(r: 61, g: 167, b: 244)
-
-class UserHeader: DatasourceCell {
-    let textLabel: UILabel = {
-        let label = UILabel()
-        label.text = "WHO TO FOLLOW"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(textLabel)
-        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
-    }
-}
-
-class UserFooter: DatasourceCell {
-    let textLabel: UILabel = {
-    let label = UILabel()
-        label.text = "Show me more"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = twitterBlue
-        return label
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        addSubview(textLabel)
-        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
-    }
-}
-
-
 class UserCell: DatasourceCell {
 
     override var datasourceItem: Any? {
         didSet {
-//            nameLabel.text = datasourceItem as? String
+            guard let user = datasourceItem as? User else { return }
+            nameLabel.text = user.name
+            usernameLabel.text = user.username
+            bioTextView.text = user.bioText
+            profileImageView.image = user.profileImage
+
         }
     }
 
@@ -58,7 +26,7 @@ class UserCell: DatasourceCell {
         imageView.image = #imageLiteral(resourceName: "profile_image")
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
-        
+
         return imageView
     }()
 
@@ -74,7 +42,7 @@ class UserCell: DatasourceCell {
         label.text = "@AlexandruCorut"
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor(r: 130, g: 130, b: 130)
-        
+
         return label
     }()
 
@@ -85,7 +53,7 @@ class UserCell: DatasourceCell {
         textView.backgroundColor = .clear
         return textView
     }()
-    
+
     let followButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 5
@@ -106,6 +74,9 @@ class UserCell: DatasourceCell {
     override func setupViews() {
         super.setupViews()
 
+        separatorLineView.isHidden = false
+        separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
+
         addSubview(profileImageView)
         addSubview(nameLabel)
         addSubview(usernameLabel)
@@ -117,32 +88,9 @@ class UserCell: DatasourceCell {
         nameLabel.anchor(profileImageView.topAnchor, left: profileImageView.rightAnchor, bottom: nil, right: followButton.leftAnchor, topConstant: 0, leftConstant: 8, bottomConstant: 0, rightConstant: 12, widthConstant: 0, heightConstant: 20)
 
         usernameLabel.anchor(nameLabel.bottomAnchor, left: nameLabel.leftAnchor, bottom: nil, right: nameLabel.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
-        
-       bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: -4, leftConstant: -4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
+
+        bioTextView.anchor(usernameLabel.bottomAnchor, left: usernameLabel.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: -4, leftConstant: -4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+
         followButton.anchor(topAnchor, left: nil, bottom: nil, right: self.rightAnchor, topConstant: 12, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 120, heightConstant: 34)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
