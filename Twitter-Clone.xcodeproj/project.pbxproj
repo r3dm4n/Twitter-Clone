@@ -84,8 +84,8 @@
 		BE791E781EB781CC00EC0539 /* Twitter-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				BEA14C201EB9091600D50219 /* Model */,
 				BEA14C211EB9093B00D50219 /* View */,
+				BEA14C201EB9091600D50219 /* Model */,
 				BEA14C1F1EB9090A00D50219 /* Controller */,
 				BE791E791EB781CC00EC0539 /* AppDelegate.swift */,
 				BE791E801EB781CC00EC0539 /* Assets.xcassets */,
