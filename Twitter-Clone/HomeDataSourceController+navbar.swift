@@ -52,7 +52,10 @@ extension HomeDataSourceController {
         composeButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
 
         navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: composeButton), UIBarButtonItem(customView: searchButton)]
+        
     }
+    
+  
 
 
 }

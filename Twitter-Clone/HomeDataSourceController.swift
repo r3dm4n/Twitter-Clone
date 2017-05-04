@@ -9,6 +9,12 @@
 import LBTAComponents
 
 class HomeDataSourceController: DatasourceController {
+    
+    //landscape
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionViewLayout.invalidateLayout()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
