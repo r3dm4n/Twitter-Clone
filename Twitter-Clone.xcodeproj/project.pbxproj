@@ -14,6 +14,7 @@
 		BE791E7A1EB781CC00EC0539 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE791E791EB781CC00EC0539 /* AppDelegate.swift */; };
 		BE791E811EB781CC00EC0539 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE791E801EB781CC00EC0539 /* Assets.xcassets */; };
 		BE791E841EB781CC00EC0539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE791E821EB781CC00EC0539 /* LaunchScreen.storyboard */; };
+		BE9158391EBAE6BA007E0BD0 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9158381EBAE6BA007E0BD0 /* TweetCell.swift */; };
 		BEA14C1E1EB902C300D50219 /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C1D1EB902C300D50219 /* HomeDataSourceController.swift */; };
 		BEA14C231EB9097A00D50219 /* UserHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C221EB9097A00D50219 /* UserHeaderFooter.swift */; };
 		BEA14C251EB9099900D50219 /* HomeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA14C241EB9099900D50219 /* HomeDatasource.swift */; };
@@ -31,6 +32,7 @@
 		BE791E801EB781CC00EC0539 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE791E831EB781CC00EC0539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE791E851EB781CC00EC0539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE9158381EBAE6BA007E0BD0 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		BEA14C1D1EB902C300D50219 /* HomeDataSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
 		BEA14C221EB9097A00D50219 /* UserHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderFooter.swift; sourceTree = "<group>"; };
 		BEA14C241EB9099900D50219 /* HomeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDatasource.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				BEA14C221EB9097A00D50219 /* UserHeaderFooter.swift */,
 				BE6C2A061EB9B666002B9CE2 /* UserCell.swift */,
+				BE9158381EBAE6BA007E0BD0 /* TweetCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				BEA14C251EB9099900D50219 /* HomeDatasource.swift in Sources */,
 				BEA14C1E1EB902C300D50219 /* HomeDataSourceController.swift in Sources */,
 				BE6C2A071EB9B666002B9CE2 /* UserCell.swift in Sources */,
+				BE9158391EBAE6BA007E0BD0 /* TweetCell.swift in Sources */,
 				BEA14C231EB9097A00D50219 /* UserHeaderFooter.swift in Sources */,
 				BE2A00381EB9A80F001EE9F0 /* User.swift in Sources */,
 				BE791E7A1EB781CC00EC0539 /* AppDelegate.swift in Sources */,
