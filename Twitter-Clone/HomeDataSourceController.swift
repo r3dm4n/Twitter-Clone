@@ -24,9 +24,7 @@ class HomeDataSourceController: DatasourceController {
 
         setupNavigationBarItems()
 
-        print(1)
         Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
-            print(3)
             self.datasource = homeDatasource
         }
     }
@@ -39,8 +37,7 @@ class HomeDataSourceController: DatasourceController {
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         if let user = self.datasource?.item(indexPath) as? User {
-//            user.bioText
-            //cell height based on user.bioText
+
 
             let aproximateWidthOfBioTextView = view.frame.width - 12 - 50 - 12 - 2
             let size = CGSize(width: aproximateWidthOfBioTextView, height: 1000)
