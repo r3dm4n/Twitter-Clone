@@ -22,8 +22,14 @@ class HomeDataSourceController: DatasourceController {
 
         setupNavigationBarItems()
 
-        let homeDataSource = HomeDataSource()
-        self.datasource = homeDataSource
+//        let homeDataSource = HomeDataSource()
+//        self.datasource = homeDataSource
+        
+        fetchHomeFeed()
+    }
+    
+    fileprivate func fetchHomeFeed() {
+        print(123)
     }
 
 

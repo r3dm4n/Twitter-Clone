@@ -6,6 +6,8 @@ target 'Twitter-Clone' do
   use_frameworks!
 
   # Pods for Twitter-Clone
- pod ‘LBTAComponents’, ‘~> 0.1.9’
+ pod 'LBTAComponents', '~> 0.1.9'
+
+ pod 'TRON', '~> 2.0.0'
 
 end
