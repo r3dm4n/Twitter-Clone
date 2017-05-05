@@ -7,14 +7,16 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
 class HomeDataSourceController: DatasourceController {
-    
+
     //landscape
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionViewLayout.invalidateLayout()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,12 +26,59 @@ class HomeDataSourceController: DatasourceController {
 
 //        let homeDataSource = HomeDataSource()
 //        self.datasource = homeDataSource
-        
+
         fetchHomeFeed()
     }
-    
+
+
+    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
+
+    class Home: JSONDecodable {
+        
+        let users: [User]
+        
+        required init(json: JSON) throws {
+            var users = [User]()
+            
+            let array = json["users"].array
+            for userJson in array! {
+                let name = userJson["name"].stringValue
+                let username = userJson["username"].stringValue
+                let bio = userJson["bio"].stringValue
+
+
+                let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+
+                users.append(user)
+            }
+            self.users = users
+        }
+    }
+
+    class JSONError: JSONDecodable {
+        required init(json: JSON) throws {
+            print("JSON ERROR") 
+        }
+    }
+
+
     fileprivate func fetchHomeFeed() {
-        print(123)
+
+
+        let request: APIRequest<HomeDataSource, JSONError> = tron.request("/twitter/home")
+
+        request.perform(withSuccess: { (homeDatasource) in
+            print("Sucessfully fetched our json objects")
+        
+            print(homeDatasource.users.count)
+            
+            self.datasource = homeDatasource
+            
+        }) { (err) in
+            print("Failed to fetch json...", err)
+        }
+        
+        
     }
 
 

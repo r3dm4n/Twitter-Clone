@@ -7,26 +7,36 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-class HomeDataSource: Datasource {
+class HomeDataSource: Datasource, JSONDecodable {
 
-    let users: [User] = {
-        let alexUser = User(name: "r3dm4n", username: "@alexandrucorut", bioText: "iPhone, iPad, iOS Programmy Community. Join to learn Swift, Objective-C and build iOS apps!", profileImage: #imageLiteral(resourceName: "profile_image"))
+    let users: [User]
 
-        let gradiUser = User(name: "Gradinita Alex", username: "@gradialex", bioText: "Private Kindergarten in Galati, Romania. 'Preparing Children for Success in Life!'", profileImage: #imageLiteral(resourceName: "gradi_profile_image"))
+    required init(json: JSON) throws {
+        var users = [User]()
 
-        let appleUser = User(name: "Apple", username: "@Apple", bioText: "Macbook Pro with Touchbar. A revolutionary new way to use your Mac. The Touch Bar replaces the function keys that have long occupied the top of your keyboard with something much more versatile and capable.2 It changes automatically based on what you’re doing to show you relevant tools you already know how to use — system controls like volume and brightness, interactive ways to adjust or browse through content, intelligent typing features like emoji and predictive text, and more. And for the first time, Touch ID is available on a Mac enabling instant access to logins and so much more.", profileImage: #imageLiteral(resourceName: "apple_profile_image"))
+        let array = json["users"].array
+        for userJson in array! {
+            let name = userJson["name"].stringValue
+            let username = userJson["username"].stringValue
+            let bio = userJson["bio"].stringValue
 
 
-        return [alexUser, gradiUser, appleUser]
-    }()
+            let user = User(name: name, username: username, bioText: bio, profileImage: UIImage())
+
+            users.append(user)
+        }
+        self.users = users
+    }
 
     let tweets: [Tweet] = {
         let alexUser = User(name: "r3dm4n", username: "@alexandrucorut", bioText: "iPhone, iPad, iOS Programmy Community. Join to learn Swift, Objective-C and build iOS apps!", profileImage: #imageLiteral(resourceName: "profile_image"))
-        
+
         let tweet = Tweet(user: alexUser, message: "Welcome to Twitter")
         let tweet2 = Tweet(user: alexUser, message: "This is the second tweet message for my Twitter Clone project")
-        
+
         return [tweet, tweet2]
     }()
 
