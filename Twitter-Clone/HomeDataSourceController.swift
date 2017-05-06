@@ -12,6 +12,15 @@ import SwiftyJSON
 
 class HomeDataSourceController: DatasourceController {
 
+    let errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Apologies, something went wrong. Please try again later"
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+
     //landscape
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionViewLayout.invalidateLayout()
@@ -20,16 +29,31 @@ class HomeDataSourceController: DatasourceController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.addSubview(errorMessageLabel)
+        errorMessageLabel.fillSuperview() //LBTA method
+
         collectionView?.backgroundColor = UIColor(r: 232, g: 236, b: 241)
 
         setupNavigationBarItems()
 
-        Service.sharedInstance.fetchHomeFeed { (homeDatasource) in
-            self.datasource = homeDatasource
+        Service.sharedInstance.fetchHomeFeed { (homeDatasource, err) in
+            if let err = err {
+                self.errorMessageLabel.isHidden = false
+                
+                if let apiError = err as? APIError<Service.JSONError> {
+                    if apiError.response?.statusCode != 200 {
+                        self.errorMessageLabel.text = "Status code was not 200"
+                    }
+                }
+                
+                return
+            }
+            
+             self.datasource = homeDatasource
         }
     }
 
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
